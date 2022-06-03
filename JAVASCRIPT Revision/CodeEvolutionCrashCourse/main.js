@@ -1,24 +1,24 @@
 //NOTE -> RUN ONE AT A TIME AND KEEP OTHERS COMMENTED.
 //-----------------------------------------------------
 
-// Closure
-//=========
+// 1) Closure :
+//==============
 
 //Example-1
 //----------
-// function Outer () {
-//   let counter = 0
+function Outer () {
+  let counter = 0
 
-//   function Inner () {
-//     counter++
-//     console.log(counter)
-//   }
+  function Inner () {
+    counter++
+    console.log(counter)
+  }
 
-//   Inner()
-// }
+  Inner()
+}
 
-// Outer()
-// Outer()
+Outer()
+Outer()
 
 //Example-2
 //----------
@@ -39,13 +39,13 @@
 
 // =======================================================================================================
 
-// Currying
-//==========
+// 2) Currying :
+//===============
 
 // Currying is a transformation of functions that translates a function from
 // callable as f(a, b, c) into callable as f(a)(b)(c).
 
-// Normal Version
+// Normal Version:
 //----------------
 
 // function sum (a, b, c) {
@@ -54,7 +54,7 @@
 
 // console.log(sum(2, 3, 5))
 
-//Curried Version
+//Curried Version:
 //----------------
 
 // function curry (fn) {
@@ -77,14 +77,14 @@
 
 //============================================================================================================
 
-// // this Keyword
-// //==============
+// // 3) this Keyword :
+// //===================
 
 // // Order Of Precedence
 // // New Binding <-- Explicit Binding <-- Implicit Binding <-- Default Binding
 
-// // 1) Implicit Binding
-// //---------------------
+// // 1) Implicit Binding :
+// //-----------------------
 
 // const person = {
 //   name: 'Vishwas',
@@ -95,8 +95,8 @@
 
 // // person.sayMyName()
 
-// // 2) Explicit Binding -> using call() method
-// //---------------------------------------------
+// // 2) Explicit Binding :  -> using call() method
+// //------------------------------------------------
 
 // //providing name in Global Scope for Default Binding
 // // const name = 'SuperMan' // -> if it were an browser
@@ -108,8 +108,8 @@
 
 // // sayMyName.call(person)
 
-// // 3) New Binding -> using Constructor Function
-// //-----------------------------------------------
+// // 3) New Binding : -> using Constructor Function
+// //-------------------------------------------------
 // function Person (name) {
 //   // this -> {}
 //   this.name = name
@@ -119,14 +119,14 @@
 // const person2 = new Person('Clarke')
 // // console.log(person1.name, person2.name)
 
-// // 4) Default Binding -> providing a name is Global Scope for this Keyword
-// //--------------------------------------------------------------------------
+// // 4) Default Binding : -> providing a name is Global Scope for this Keyword
+// //----------------------------------------------------------------------------
 // // sayMyName()
 
 //====================================================================================================
 
-// //Prototype
-// //==========
+// // 4) Prototype :
+// //================
 
 // function Person (fName, lName) {
 //   this.firstName = fName
@@ -136,13 +136,13 @@
 // const person1 = new Person('Bruce', 'Wayne')
 // const person2 = new Person('Steve', 'Rogers')
 
-// //Without Prototype -> this function is only acccessible by instance person1.
-// //----------------------------------------------------------------------------
+// // Without Prototype -> this function is only accessible by instance person1.
+// //--------------------------------------------------------------------------------
 // // person1.getFullName = function () {
 // //   return this.firstName + ' ' + this.lastName
 // // }
 
-// //With Prototype -> this function now will be acccessible & available to all the instances.
+// // With Prototype -> this function now will be accessible & available to all the instances.
 // //created with the 'Person' Constructor Function's prototype.
 // //------------------------------------------------------------
 // Person.prototype.getFullName = function () {
@@ -154,8 +154,8 @@
 
 //============================================================================================================
 
-// // Prototypal Inheritence
-// //=========================
+// // 5) Prototypal Inheritance :
+// //=============================
 
 // // Parent Constructor Function
 // function Person (fName, lName) {
@@ -178,7 +178,7 @@
 //   console.log('Fighting Crime')
 // }
 
-// //inherting getFullName() from parent to child using Object.create() & Prototype Chain
+// //Inheriting getFullName() from parent to child using Object.create() & Prototype Chain
 // SuperHero.prototype = Object.create(Person.prototype)
 
 // //finally
@@ -196,10 +196,10 @@
 
 //==================================================================================================
 
-// //class
-// //======
+// // 6) class :
+// //============
 
-// // Doing same thing as Done above in Prototypal Inheritence but this time using class
+// // Doing same thing as Done above in Prototypal Inheritance but this time using class
 // // A JS class is just a syntactic sugar over what was already existing in JS
 
 // // Parent class
@@ -234,8 +234,8 @@
 
 //=====================================================================================================
 
-// // Iterables & Iterator - Protocol
-// //==================================
+// // 7) Iterables & Iterator - Protocol :
+// //=======================================
 
 // // creating our own iterable Object
 
@@ -264,30 +264,29 @@
 
 //======================================================================================================
 
-//Generators
-//===========
+// // 8) Generators :
+// //================
 
-//A normal function
-function normalFunction () {
-  console.log('Hello')
-  console.log('World')
-}
+// //A normal function
+// function normalFunction () {
+//   console.log('Hello')
+//   console.log('World')
+// }
 
-// normalFunction()
+// // normalFunction()
 
-// A generator function that returns an iterator for us
-function * generatorFunction () {
-  yield 'Hello'
-  yield 'World'
-}
+// // A generator function that returns an iterator for us
+// function * generatorFunction () {
+//   yield 'Hello'
+//   yield 'World'
+// }
 
-const generatorObject = generatorFunction()
+// const generatorObject = generatorFunction()
 
-//this returned generatorObject is an iterator
-//hence we can use for...Of loop on it
-for (const words of generatorObject) {
-  console.log(words)
-}
-
+// //this returned generatorObject is an iterator
+// //hence we can use for...Of loop on it
+// for (const words of generatorObject) {
+//   console.log(words)
+// }
 
 //====================================================================================================

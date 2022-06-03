@@ -1,21 +1,35 @@
 // creating a simple object and seeing different ways to print them :-
 //=======================================================================
 
-// creating an alien object
-let alien = {
-  alienName: 'Ujjwal Singh',
-  alienAge: 24,
+// creating an employee object
+let employee = {
+  employeeName: 'Bruce Wayne',
+  employeeAge: 24,
   'work exp': '5 Years'
 }
 
-console.log(alien)
-console.log(alien.alienName)
-console.log(alien.alienAge)
-console.log(alien['work exp'])
+
+//adding few new properties like -> City : 'Australia' & -> 2020 : 'Best Year'
+let data = 'City'
+employee[data] = 'Gotham'
+
+let year = 2020
+employee[year] = 'Best Year'
+
+//incrementing employeeAge value by 1
+console.log('Initial Age: ', employee.employeeAge)
+employee.employeeAge = ++employee.employeeAge
+console.log('Incremented Age: ', employee.employeeAge)
+
+console.log(employee)
+console.log(employee[2020])
+console.log(employee.employeeName)
+console.log(employee.employeeAge)
+console.log(employee['work exp'])
 
 // when user gives input then also use [] to fetch data
 //-------------------------------------------------------
 
-let userInput = 'alienName'
-console.log(alien.userInput) // error, says undefined, hence using []
-console.log(alien[userInput])
+let userInput = 'employeeName'
+console.log(employee.userInput) // error, says undefined, hence using []
+console.log(employee[userInput])

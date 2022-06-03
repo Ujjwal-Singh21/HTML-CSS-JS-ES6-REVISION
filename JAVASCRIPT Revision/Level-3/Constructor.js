@@ -1,6 +1,8 @@
-// if we want to create same common object again and again, 
-// go for Constructor Function
+// If we want to create same common object again and again, 
+// Then We should go for Constructor Function.
+//-----------------------------------------------------------
 function Customer (id, name, pName) {
+  
   this.customerId = id
   this.customerName = name
   this.productName = pName
@@ -17,5 +19,5 @@ let customer2 = new Customer(102, 'Bruce', 'Cold Drinks')
 customer2.getDetails()
 console.log(customer2)
 
-// we can also create a method inside constructor function, which will be common to all
+// We can also create a method inside constructor function, which will be common to all
 // Objects

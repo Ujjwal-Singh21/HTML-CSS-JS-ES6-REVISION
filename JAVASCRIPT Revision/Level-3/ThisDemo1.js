@@ -1,4 +1,4 @@
-// Creating 2 laptop Objects and comapring both based on their price.
+// Creating 2 laptop Objects and comparing both based on their price.
 // Normal approach using a 3rd party or external method.
 
 let laptop1 = {
@@ -25,6 +25,7 @@ laptop2.getConfig()
 
 // using an external getBestLaptop method to compare both laptops
 function getBestLaptop (laptop1, laptop2) {
+  
   if (laptop1.price < laptop2.price) {
     console.log('Laptop1 Asus is cheap and best')
   } else {

@@ -1,5 +1,5 @@
 // second approach using this keyword,
-// here laptop1 will compare himself to laptop without any 3rd party method.
+// here laptop1 will compare itself to laptop2 without any 3rd party method.
 // hence creating a compare method inside laptop1 object itself.
 
 let laptop1 = {
