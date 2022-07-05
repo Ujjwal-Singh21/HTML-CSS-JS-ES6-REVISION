@@ -1,6 +1,7 @@
-// PARENT CLASS :-
-//--------------------
+// PARENT CLASS
+//--------------
 class Person {
+
   constructor (name, age, location) {
     this.name = name
     this.age = age
@@ -8,7 +9,7 @@ class Person {
   }
 
   walk () {
-    console.log(this.name, 'is Walking on roof in ', this.location)
+    console.log(this.name, 'is Walking on roof in', this.location)
   }
 
   talk () {
@@ -16,13 +17,12 @@ class Person {
   }
 }
 
-// CHILD CLASS :-
-//------------------
-// We need to add an extra property "Degree" here, so creating a constructor.
-// Always use super() keyword in child class to refer to parent class constructor 
-// during inheritence
+// CHILD CLASS 
+//------------
+// We need to add an extra property "Degree" here, so creating a constructor. Always use super() keyword in child class to refer to parent class constructor during inheritence
 
 class Teacher extends Person {
+
   constructor (name, age, location, degree) {
     super(name, age, location)
     this.degree = degree
@@ -35,6 +35,8 @@ class Teacher extends Person {
 
 const teacher = new Teacher('Ananya', 21, 'Malaysia', 'BSc')
 console.log(teacher)
+
 teacher.talk()
-teacher.teach()
 teacher.walk()
+teacher.teach()
+

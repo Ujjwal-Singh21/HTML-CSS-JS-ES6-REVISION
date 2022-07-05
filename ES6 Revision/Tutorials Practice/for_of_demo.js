@@ -17,11 +17,9 @@ for (let [index, color] of colors.entries()) {
 //--------------------------------------------
 // 1) The ratings is an array of objects. Each object has two properties user and score.
 
-// 2) The for...of iterate over the ratings array and calculate the total scores of all 
-//    Objects.
+// 2) The for...of iterate over the ratings array and calculate the total scores of all Objects.
 
-// 3) The expression const {score} of ratings uses object destructing to assign the score
-//    property of the current iterated element to the score variable.
+// 3) The expression const {score} of ratings uses object destructing to assign the score property of the current iterated element/object to the score variable.
 
 let ratings = [
   { name: 'John', score: 3 },

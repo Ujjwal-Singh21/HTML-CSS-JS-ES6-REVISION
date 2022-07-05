@@ -40,3 +40,4 @@ console.log(b) // now when cursor comes here, it prints NOT DEFINED!
   - LE of a() in turn is its memory space + reference to LE of parent (Global EC)
   - LE of Global EC points to its memory space + *NULL* (as no parent for Global EC).
 */
+

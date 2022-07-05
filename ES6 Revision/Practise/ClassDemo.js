@@ -1,23 +1,18 @@
-// 1) Suppose if we have an Object called person having a propety 'name' and a method
-//   'talk'.
+// 1) Suppose if we have an Object called person having a propety 'name' and a method'talk'.
 
-// 2) Now if we want to create another person Object, we need to copy paste same Object
-//    code again.
+// 2) Now if we want to create another person Object, we need to copy paste same Object code again.
 
-// 3) In future if there is a bug in one Object, since we copied & pasted it again and
-//    again to create new Objects each time, we need to debug each Object code and its
-//    time consuming.
+// 3) In future if there is a bug in one Object, since we copied & pasted it again and again to create new Objects each time, we need to debug each Object code and its time consuming.
 
-// 4) Hence in ES6, we can create a class Person using class keyword,
-//    and classname should start with Capital letter always.
+// 4) Hence in ES6, we can create a class Person using class keyword, and classname should start with Capital letter always.
 
-// 5) Now using that Person class, we can create multiple Objects just by using
-//    'new' Keyword.
+// 5) Now using that Person class, we can create multiple Objects just by using'new' Keyword.
 
-// creating a class Person :-
-//------------------------------
+// creating a class Person:
+//-------------------------
 
- class Person {
+class Person {
+  
   constructor (name, age, location) {
     this.name = name
     this.age = age

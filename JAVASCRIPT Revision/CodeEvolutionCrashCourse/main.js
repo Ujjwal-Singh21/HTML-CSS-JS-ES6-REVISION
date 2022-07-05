@@ -7,6 +7,7 @@
 //Example-1
 //----------
 function Outer () {
+  
   let counter = 0
 
   function Inner () {
