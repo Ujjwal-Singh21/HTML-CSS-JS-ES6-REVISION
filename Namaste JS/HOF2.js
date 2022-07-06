@@ -1,7 +1,7 @@
-//With functional programming and Higher Order Functions
-//Code duplications issues are solved
-//Code reusability is improved
-//Area -> PI r square, Circumference -> 2 * PI * r, Diameter -> 2 * r
+// With functional programming and Higher Order Functions
+// Code duplications issues are solved
+// Code reusability is improved
+// Area -> PI r square, Circumference -> 2 * PI * r, Diameter -> 2 * r
 //----------------------------------------------------------------------
 
 const radiusInputArray = [2, 3, 4, 5];

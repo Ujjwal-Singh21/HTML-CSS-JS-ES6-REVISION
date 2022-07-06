@@ -6,8 +6,7 @@
 
 // 1) Implicit Binding:
 //======================
-// The implicit binding rule states that, when a function is invoked with dot (.) notation, 
-// then the object to the left side of the dot is what 'this' keyword is referring to.
+// The implicit binding rule states that, when a function is invoked with dot (.) notation,then the object to the left side of the dot is what 'this' keyword is referring to.
 
 const personObj = {
 
@@ -25,13 +24,11 @@ personObj.sayName(); // here 'this' is referring to personObj.
 
 // 2) Explicit Binding:
 //=====================
-// -> Let's say we are calling a function which is a stand alone function and it is not present inside 
-//    any Object, 
-// -> Then if we use 'this' keyword inside that function we need to explicity specify the context for 
-//   'this' keyword, and we do that using call() method, which is always by default available to all 
-//    JS functions. 
-// -> Hence while invoking the stand alone function we add .call() method and specify the context or 
-//    object inside call(--here--) method as parameter to which 'this' keyword will refer to hereafter.
+// -> Let's say we are calling a function which is a stand alone function and it is not present inside any Object,
+
+// -> Then if we use 'this' keyword inside that function we need to explicity specify the context for 'this' keyword, and we do that using call() method, which is always by default available to all JS functions.
+
+// -> Hence while invoking the stand alone function we add .call() method and specify the context or object inside call(--here--) method as parameter to which 'this' keyword will refer to hereafter.
 
 const person = {
   name: 'Steve Rogers',
@@ -48,15 +45,10 @@ displayName.call(person); // now 'this' will refer to person object now
 
 // 3) New Binding: (Constructor function)
 //=======================================
-// -> In JS, we can invoke a function using 'new' keyword, that function is nothing but a constructor 
-//    function.
-// -> And in such a scenario, the function will be invoked with 'this' keyword referring to a new 
-//    empty object.
-// -> So every time the constructor function is invoked using new keyword, everytime under the hood 
-//    a new empty object gets created and 'this' keyword for each invocation will be pointing to its 
-//    corresponding newly created empty object.
-// -> We can add some properties to that empty object using the same 'this' keyword which is pointing 
-//    to it.
+// -> In JS, we can invoke a function using 'new' keyword, that function is nothing but a constructor function.
+// -> And in such a scenario, the function will be invoked with 'this' keyword referring to a new empty object.
+// -> So every time the constructor function is invoked using new keyword, everytime under the hood a new empty object gets created and 'this' keyword for each invocation will be pointing to its corresponding newly created empty object.
+// -> We can add some properties to that empty object using the same 'this' keyword which is pointing to it.
 
 function Person (name, city) {
 
