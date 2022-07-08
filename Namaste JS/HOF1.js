@@ -1,6 +1,6 @@
-// Without functional programming and Higher Order Functions, Code duplications issues are spotted
-// Area -> PI r square, Circumference -> 2 * PI * r, Diameter -> 2 * r
-//----------------------------------------------------------------------
+// Without functional programming and Higher Order Functions, Code duplications issues are spotted.
+// Area -> PI*r*r, Circumference -> 2 * PI * r, Diameter -> 2 * r
+//---------------------------------------------------------------------
 
 const radius = [2, 3, 4, 5]
 
@@ -15,7 +15,7 @@ const calculateArea = (radius) => {
     resultArray.push(Math.PI * radius[i] * radius[i])
   }
 
-  return resultArray
+  return resultArray;
 }
 
 const result1 = calculateArea(radius)
@@ -32,7 +32,7 @@ const calculateCircumference = (radius) => {
     resultArray.push(2 * Math.PI * radius[i])
   }
 
-  return resultArray
+  return resultArray;
 }
 
 const result2 = calculateCircumference(radius)
@@ -49,7 +49,7 @@ const calculateDiameter = (radius) => {
     resultArray.push(2 * radius[i])
   }
 
-  return resultArray
+  return resultArray;
 }
 
 const result3 = calculateDiameter(radius)

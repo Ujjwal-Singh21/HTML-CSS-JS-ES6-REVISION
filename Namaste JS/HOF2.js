@@ -6,6 +6,7 @@
 
 const radiusInputArray = [2, 3, 4, 5];
 
+//separate functions
 const area = (radius) => {
 
   return Math.PI * radius * radius;
@@ -44,7 +45,7 @@ console.log('Circumference: ', circumferenceResult)
 const diameterResult = calculateFunction(radiusInputArray, diameter);
 console.log('Diameter: ', diameterResult)
 
-//doing same thing using map
+//doing same thing using map 
 const res1 = radiusInputArray.map(area)
 console.log('Map-Area: ', res1)
 
@@ -60,7 +61,7 @@ Array.prototype.calculateFunctionAsMap = function (logic) {
 
   const resArray = [];
 
-  for(let i = 0; i < this.length; i++) {
+  for(let i = 0; i < this.length; i++) { // here this -> radiusInputArray
 
     resArray.push(logic(this[i]));
   }

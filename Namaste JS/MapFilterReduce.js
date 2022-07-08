@@ -63,9 +63,11 @@ console.log('ReduceMaxResult: ', reduceMaxRes)
 //----------------------------------------------------------------------------------------
 
 //Q1: Find a list consisting of Full Names of all User
+//----------------------------------------------------
 //o/p -> ['Chris Evans', 'Elon Musk', 'Scarlett Johansson', 'Robert Downey Junior', 'MS Dhoni', 'Emma Watson', 'Tom Holand'] 
 
 //Our input array of Objects:
+//---------------------------
 const Users = [
   { firstName: 'Chris', lastName: 'Evans', age: 35 },
   { firstName: 'Elon', lastName: 'Musk', age: 50 },
@@ -89,7 +91,8 @@ console.log('Full Names List: ', fullNameList)
 
 //--------------------------------------------------------------------------------------------------
 
-//Q2: Find a list of no of people in a particular age: 
+//Q2: Find a list of no of people in a particular age
+//---------------------------------------------------
 //o/p -> { 22: 1, 29: 2, 35: 2, 50: 1, 55: 1 }
 
 const ageDetails = Users.reduce((accumulator, current) => {
@@ -112,8 +115,8 @@ console.log('Age-Details: ', ageDetails)
 //---------------------------------------------------------------------------------------------------
 
 //Q3: Finding only firstName of all those Users whose age is less than 30 (age < 30)
-//Solving just using reduce() method
-// o/p -> ['Scarlett', 'Emma', 'Tom']
+//----------------------------------------------------------------------------------
+//Solving just using reduce() method -> o/p -> ['Scarlett', 'Emma', 'Tom']
 
 const lessThanThiryAgeUsers = Users.reduce((accumulator, current) => {
 
