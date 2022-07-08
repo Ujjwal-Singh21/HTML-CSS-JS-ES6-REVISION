@@ -31,8 +31,8 @@ console.log('After Modification', arr) // [22, 24, 27, 28, 29]
 
 //-----------------------------------------------------------------------------------------------------
 
-// Q2 : null vs undefined
-//-----------------------
+// Q2: null vs undefined
+//----------------------
 // null is actually a value for a variable and its type is object, whereas undefined means a variable is declared but it has not yet been initialized with any value.
 
 let a;
@@ -46,8 +46,8 @@ console.log(null === undefined) // false -> === compares both entities as well a
 
 //------------------------------------------------------------------------------------------------------
 
-// Q3 : Event Delegation
-//----------------------
+// Q3: Event Delegation
+//---------------------
 
 document.querySelector("#products").addEventListener('click', (event) => {
   console.log(event)
@@ -89,6 +89,7 @@ function flattenArr (arr, depth = 1) {
         result.push(...flattenArr(arr, depth - 1))
 
     } else {
+      
         result.push(arr)
     }
   })
@@ -156,7 +157,7 @@ console.log(myArr) // -> [9, 6, 7, 8, 9, 6, 7, 8, 9]
 //-------------------------------------------------------------------------------------------------------
 
 // Q8: Composition Polyfill (making a polyfill of compose() function)
-//--------------------------------------------------------------------
+//-------------------------------------------------------------------
 const addFive = (a) => {
   return a + 5;
 }
@@ -180,6 +181,79 @@ const compose = (...functions) => {
 
 const evaluateFn = compose(addFive, subtractTwo, multiplyFour)
 console.log('Composition Polyfill: ', evaluateFn(5)); // 23
+
+
+//--------------------------------------------------------------------------------------------------------
+
+// Q9: behaviour of 'this' keyword in an arrow function 
+//-----------------------------------------------------
+
+// Arrow functions treat 'this' keyword differently. They don't define their own context since it doesn't have its own 'this' context. They inherit that from the parent scope whenever you call 'this'. But 'this' in a regular function always refers to the context of the function being called.
+
+// Here fun() is a regular JS function and it has its own 'this' keyword pointing to the object upon which the fun() function is invoked (this -> obj1). This fun() function internally returns an arrow function inside which we have used and logged to the console the 'this' keyword. Since we already know that 'this' keyword inside an arrow function does not have its own context and so it always inherit the context from its closest non-arrow parent function.
+
+const obj1 = {
+  name: 'Ajay',
+  fun () {
+    return () => {
+      console.log(this) // -> {name: 'Ajay', fun: ƒ}
+      console.log(this.name) // -> Ajay
+    }
+  }
+}
+
+obj1.fun()()
+
+
+//---------------------------------------------------------------------------------------------------
+
+// Q10: Argument binding in Normal JS function vs an Arrow function
+//-----------------------------------------------------------------
+
+// Arrow functions do not have an arguments binding. However, they have access to the arguments object of the closest non-arrow parent function. Named and rest parameters are heavily relied upon to capture the arguments passed to arrow functions. 
+
+const myObj = {
+
+  showArgs1() {
+    console.log(arguments)
+  },
+
+  showArgs2: () => {
+    console.log(...arguments)
+  }, 
+
+ nonArrowFn() {
+  return () => {
+    console.log(arguments) // -> [4, 6, 8, 9, callee: ƒ, Symbol(Symbol.iterator): ƒ]
+    console.log(...arguments) // -> 4 6 8 9
+  }
+ }
+}
+
+myObj.showArgs1(11, 2, 3, 4) // -> [ 11, 2, 3, 4, callee: ƒ, Symbol(Symbol.iterator): ƒ ]
+// myObj.showArgs2(11, 2, 3, 4) // -> Uncaught ReferenceError: arguments is not defined at Object.showArgs2
+myObj.nonArrowFn(4, 6, 8, 9)()
+
+
+//------------------------------------------------------------------------------------------------------
+
+// Q11: Duplicate Named parameters in Normal JS function vs an Arrow function
+//----------------------------------------------------------------------------
+
+// Regular functions can have duplicate named parameters in non-strict mode, but cannot have in strict mode.But Arrow functions can never have duplicate named parameters, whether in strict or non-strict mode.
+
+function add(x, x){
+  console.log(x, x)
+}
+
+add(5, 55)
+
+
+'use strict';
+function sub(x, x){
+  console.log(x, x)
+}
+// SyntaxError: duplicate formal argument x 
 
 
 //--------------------------------------------------------------------------------------------------------
