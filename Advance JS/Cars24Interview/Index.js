@@ -54,34 +54,34 @@
 
 //--------------------------------------------------------------------------------------------------------
 
-// // Q4: Implement this code
-// //------------------------
-// // const resultObj = calc.add(10).multiply(5).subtract(30).add(10);
-// // console.log(resultObj.total);
-
-// const calc = {
-//   total: 0,
-
-//   add(a) {
-//     this.total = this.total + a; // -> this.total += a;
-//     return this;
-//   },
-
-//   multiply(b) {
-//     this.total *= b;
-//     return this;
-//   },
-
-//   subtract(c) {
-//     this.total -= c;
-//     return this;
-//   }
-
-// }
-
+// Q4: Implement this code
+//------------------------
 // const resultObj = calc.add(10).multiply(5).subtract(30).add(10);
+// console.log(resultObj.total);
 
-// console.log('Code Implementation result:', resultObj.total); 
+const calc = {
+  total: 0,
+
+  add(a) {
+    this.total = this.total + a; // -> this.total += a;
+    return this;
+  },
+
+  multiply(b) {
+    this.total *= b;
+    return this;
+  },
+
+  subtract(c) {
+    this.total -= c;
+    return this;
+  }
+
+}
+
+const resultObj = calc.add(10).multiply(5).subtract(30).add(10);
+
+console.log('Code Implementation result:', resultObj.total); 
 
 
 //-----------------------------------------------------------------------------------------------------
