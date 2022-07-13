@@ -52,7 +52,7 @@ multiplyNumeric(obj)
 const checkObj = {}
 console.log('Converting an obj as string:', checkObj.toString()) // -> [object Object]
 
-const object1 = {} // -> { [object Object]: 123 rewritten as 456 }
+const object1 = {} // -> { [object Object]: 123 initially, then rewritten as 456 }
 const object2 = { key: 'b' }
 const object3 = { key: 'c' }
 
@@ -112,7 +112,7 @@ const settings = {
 // ignores name, converts just name & health into string
 const data = JSON.stringify(settings, ['age', 'health']) 
 
-console.log(data) // -> {"age":20,"health":90}
+console.log(data) // -> { "age":20, "health":90 }
 
 // Question-3
 //-----------
@@ -206,14 +206,48 @@ function changeAgeAndReference(person) {
 
 const personobj1 = {
   name: 'Rohit Sharma',
-  age: 34
+  age: 24
 }
 
 const personobj2 = changeAgeAndReference(personobj1)
 
-console.log(personobj1) // -> { name: 'Rohit Sharma', age: 55 }
+console.log(personobj1) // -> { name: 'Rohit Sharma', age: 35 }
 console.log(personobj2) // -> { name: 'Virat Kohli', age: 33 }
 
+
+//---------------------------------------------------------------------------------------------------- 
+
+// Q18: How to make deep copy or clone an Object?
+//----------------------------------------------- 
+
+const personObj = {
+
+  name: 'Clarke Kent',
+  age: 41
+}
+
+// Here are the 3 ways to do this.
+
+//Approach-1 (changes in cloned object will not modify anything in actual object)
+//-------------------------------------------------------------------------------
+const clone1 = Object.assign({}, personObj)
+
+clone1.name = 'Bruce Wayne'
+console.log(personObj, clone1)
+
+//Approach-2
+//----------
+const clone2 = JSON.parse(JSON.stringify(personObj))
+
+clone2.name = 'Diana'
+console.log(personObj, clone2) 
+
+//Approach-3
+//----------
+const clone3 = {...personObj}
+
+clone3.name = 'Steve Rogers'
+console.log(personObj, clone3)
 
 
 
