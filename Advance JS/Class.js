@@ -36,3 +36,8 @@ console.log(batMan);
 console.log(batMan.isSuperHero);
 console.log(batMan.getFullName());
 batMan.fightingCrime();
+
+const readlinesync = require('readline-sync')
+const username = readlinesync.question('Enter your name')
+
+console.log('Hello', username)

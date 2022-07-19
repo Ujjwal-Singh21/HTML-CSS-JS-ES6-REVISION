@@ -18,8 +18,8 @@ Person.prototype.getFullName = function () {
 //--------------------------------------
 // -> Instead of copying pasting firstName and lastName properties again here, 
 // -> We can inherit that from Parent function 'Person'
-// -> But this keyword in Parent Constructor Function will be pointing to empty object of Parent's instance, but We want this keyword from Parent to point/refer to object of our SuperHero's created instances.
-// -> After Creating SuperHero's instance using new keyword, this keyword of SuperHero's Function will be pointing to newly created empty object, but we want Parent Person's function this keyword also to start pointing this SuperHero's newly created object.
+// -> But 'this' keyword in Parent Constructor Function will be pointing to empty object of Parent's instance, but We want this keyword from Parent to point/refer to object of our SuperHero's created instances.
+// -> After Creating SuperHero's instance using new keyword, 'this' keyword of SuperHero's Function will be pointing to newly created empty object, but we want Parent Person's function 'this' keyword also to start pointing this SuperHero's newly created object.
 // -> Hence we call Person function using .call() method and specify SuperHero's newly created object as 1st arg and fName, lName values as 2nd and 3rd args.
 function SuperHero (fName, lName) {
 
@@ -36,7 +36,7 @@ SuperHero.prototype.fightingCrime = function () {
 
 // -> Getting or Inheriting getFullName() method from Parent's prototype object into child's prototype object using Object.create() method.
 // -> The Object.create() method creates a new object, using an existing object as the prototype of the newly created object.
-// -> Object.create() will delegate search control to another chained object during failed lookups, means when getFullName() method will not be found in child's prototype Object then searching control will be delegated to Parent's prototype object.
+// -> Object.create() will delegate search control to another chained object during failed lookups, means when getFullName() method will not be found in child's prototype object then searching control will be delegated to Parent's prototype object.
 SuperHero.prototype = Object.create(Person.prototype);
 
 // After all this, JS thinks that SuperHero is created from Person, Which is wrong, so we make it clear by communicating to JS by writing this line of code.
